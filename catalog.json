@@ -1,14 +1,14 @@
 [
   {
-    "id": "exemple-mod",
-    "name": "Mod d'exemple",
-    "author": "Starynth",
+    "id": "25greener",
+    "name": "25% Greener",
+    "author": "Supermarzo",
     "version": "1.0",
     "game": "SMATRS",
-    "description": "Ceci est un mod d'exemple. Remplace cette entrée par de vrais mods une fois que tu as des .rsm à publier en Release.",
-    "tags": ["exemple"],
+    "description": "Makes the game 25% Greener.",
+    "tags": ["Graphic"],
     "iconUrl": "",
-    "downloadUrl": "",
-    "updatedAt": "2026-07-23"
+    "downloadUrl": "https://github.com/Supermarzo/starynth-catalog/releases/download/25%25GreenerV1/25.Greener.rsm",
+    "updatedAt": "2026-04-26"
   }
 ]
