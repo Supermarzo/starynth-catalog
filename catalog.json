@@ -1,0 +1,14 @@
+[
+  {
+    "id": "exemple-mod",
+    "name": "Mod d'exemple",
+    "author": "Starynth",
+    "version": "1.0",
+    "game": "SMATRS",
+    "description": "Ceci est un mod d'exemple. Remplace cette entrée par de vrais mods une fois que tu as des .rsm à publier en Release.",
+    "tags": ["exemple"],
+    "iconUrl": "",
+    "downloadUrl": "",
+    "updatedAt": "2026-07-23"
+  }
+]
