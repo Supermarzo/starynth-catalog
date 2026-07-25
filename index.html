@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Starynth Catalog — Mods pour SMATRS</title>
+<meta name="description" content="Le catalogue communautaire de mods pour Super Mario and the Rainbow Stars, utilisé par le modloader Starynth." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+
+<nav class="nav">
+  <div class="container">
+    <div class="brand"><div class="logo-dot">S</div> Starynth Catalog</div>
+    <div class="links">
+      <a href="#publier">Publier un mod</a>
+      <a href="#format">Format</a>
+      <a href="#mods">Mods</a>
+      <a href="https://discord.com/invite/GBXUa7NF2J">Discord</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="starfield" id="starfield"></div>
+  <div class="container">
+    <div class="eyebrow">⭐ Catalogue communautaire</div>
+    <h1>Tes mods, <span class="accent-word">à portée de tous</span> les joueurs de SMATRS.</h1>
+    <p class="lede">
+      Ce dépôt alimente <strong>Starynth</strong>, le modloader façon Modrinth
+      pour <em>Super Mario and the Rainbow Stars</em>. Publie ton mod ici et il
+      apparaît directement dans l'onglet Découvrir de l'app — plus besoin de
+      le poster sur Discord à chaque mise à jour.
+    </p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="#publier">Publier mon mod</a>
+      <a class="btn btn-secondary" href="#mods">Voir les mods existants</a>
+    </div>
+  </div>
+</header>
+
+<section class="section" id="publier">
+  <div class="container">
+    <div class="section-head">
+      <div class="kicker">01 — Marche à suivre</div>
+      <h2>Publier un mod en 3 étapes</h2>
+      <p>Aucun serveur, aucun compte à créer ailleurs : tout se passe sur GitHub.</p>
+    </div>
+
+    <div class="steps">
+      <div class="step">
+        <div class="num">1</div>
+        <h3>Fork ce dépôt</h3>
+        <p>Bouton <code>Fork</code> en haut à droite de la page GitHub du dépôt. Tu obtiens ta propre copie modifiable.</p>
+      </div>
+      <div class="step">
+        <div class="num">2</div>
+        <h3>Ajoute ton mod</h3>
+        <p>Publie ton fichier <code>.rsm</code> en Release GitHub, puis ajoute une entrée dans <code>catalog.json</code> avec le lien (voir le format ci-dessous).</p>
+      </div>
+      <div class="step">
+        <div class="num">3</div>
+        <h3>Propose ta Pull Request</h3>
+        <p>Ouvre une Pull Request vers ce dépôt. Une fois acceptée, ton mod apparaît dans Starynth pour tout le monde.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="format">
+  <div class="container">
+    <div class="section-head">
+      <div class="kicker">02 — Référence</div>
+      <h2>Format d'une entrée</h2>
+      <p>Chaque mod est un objet JSON dans <code>catalog.json</code>.</p>
+    </div>
+
+    <div class="format-grid">
+      <div>
+        <pre class="code-block" id="json-template">{
+  <span class="k">"id"</span>: <span class="s">"identifiant-unique"</span>,
+  <span class="k">"name"</span>: <span class="s">"Nom affiché du mod"</span>,
+  <span class="k">"author"</span>: <span class="s">"Ton pseudo"</span>,
+  <span class="k">"version"</span>: <span class="s">"1.0"</span>,
+  <span class="k">"gameVersion"</span>: <span class="s">"1.1.1"</span>,
+  <span class="k">"description"</span>: <span class="s">"Description courte."</span>,
+  <span class="k">"tags"</span>: [<span class="s">"gameplay"</span>],
+  <span class="k">"iconUrl"</span>: <span class="s">"https://.../icon.png"</span>,
+  <span class="k">"downloadUrl"</span>: <span class="s">"https://github.com/.../mon-mod.rsm"</span>,
+  <span class="k">"updatedAt"</span>: <span class="s">"2026-07-23"</span>
+}</pre>
+        <button class="copy-btn" id="copy-template-btn">Copier le modèle</button>
+      </div>
+
+      <div class="field-list">
+        <div class="field"><b>id</b><p>Identifiant unique, sans espace ni majuscule accentuée.</p></div>
+        <div class="field"><b>gameVersion</b><p>Version exacte de SMATRS visée (ex. <code>1.1.1</code>, <code>1.0.2</code>). Sert au filtre par version et à la création automatique d'instance dans Starynth.</p></div>
+        <div class="field"><b>iconUrl</b><p>Lien direct vers un PNG. Tu peux l'héberger dans ce dépôt (dossier <code>icons/</code>) et utiliser un lien <code>raw.githubusercontent.com</code>.</p></div>
+        <div class="field"><b>downloadUrl</b><p>Lien direct vers le <code>.rsm</code>, publié comme asset d'une Release GitHub — pas un lien vers le code source.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="mods">
+  <div class="container">
+    <div class="section-head">
+      <div class="kicker">03 — Catalogue</div>
+      <h2>Mods disponibles</h2>
+      <p>Chargé en direct depuis <code>catalog.json</code> — la même liste que dans l'onglet Découvrir de Starynth.</p>
+    </div>
+
+    <div class="mods-toolbar">
+      <input type="text" id="mods-search" placeholder="Rechercher un mod, un auteur, un tag..." />
+      <span id="mods-count" style="color:var(--text-faint); font-size:13px;">Chargement...</span>
+    </div>
+
+    <div class="mods-grid" id="mods-grid">
+      <div class="empty-note">Chargement du catalogue...</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container" style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; width:100%;">
+    <span>Catalogue communautaire, non affilié à l'équipe SMATRS.</span>
+    <span><a href="https://github.com/Supermarzo/starynth-catalog">Voir le dépôt</a> · <a href="https://discord.com/invite/GBXUa7NF2J">Discord</a></span>
+  </div>
+</footer>
+
+<script src="assets/script.js"></script>
+</body>
+</html>
