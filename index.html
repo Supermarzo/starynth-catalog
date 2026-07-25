@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Starynth Catalog — Mods pour SMATRS</title>
+<meta name="description" content="Le catalogue communautaire de mods pour Super Mario and the Rainbow Stars, utilisé par le modloader Starynth." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+
+<nav class="nav">
+  <div class="container">
+    <div class="brand"><div class="logo-dot">S</div> Starynth Catalog</div>
+    <div class="links">
+      <a href="#publier">Publier un mod</a>
+      <a href="#mods">Mods</a>
+      <a href="https://discord.com/invite/GBXUa7NF2J">Discord</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="starfield" id="starfield"></div>
+  <div class="container">
+    <div class="eyebrow">⭐ Catalogue communautaire</div>
+    <h1>Tes mods, <span class="accent-word">à portée de tous</span> les joueurs de SMATRS.</h1>
+    <p class="lede">
+      Ce dépôt alimente <strong>Starynth</strong>, le modloader façon Modrinth
+      pour <em>Super Mario and the Rainbow Stars</em>. Publie ton mod ici et il
+      apparaît directement dans l'onglet Découvrir de l'app — plus besoin de
+      le poster sur Discord à chaque mise à jour.
+    </p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="https://github.com/Supermarzo/starynth-catalog/issues/new?template=submit-mod.yml">Proposer mon mod</a>
+      <a class="btn btn-secondary" href="#mods">Voir les mods existants</a>
+    </div>
+  </div>
+</header>
+
+<section class="section" id="publier">
+  <div class="container">
+    <div class="section-head">
+      <div class="kicker">Marche à suivre</div>
+      <h2>Publie ton mod en un formulaire</h2>
+      <p>Pas de Git, pas de fork, pas de Pull Request : remplis un formulaire, glisse ton fichier, c'est tout. Ton mod est ajouté au catalogue automatiquement, en quelques minutes.</p>
+    </div>
+
+    <div class="steps">
+      <div class="step">
+        <div class="num">1</div>
+        <h3>Clique sur "Proposer mon mod"</h3>
+        <p>Ça ouvre un formulaire GitHub classique — connecte-toi à un compte GitHub (gratuit) si besoin.</p>
+      </div>
+      <div class="step">
+        <div class="num">2</div>
+        <h3>Remplis les infos et glisse ton fichier</h3>
+        <p>Nom, auteur, version, description... et ton <code>.rsm</code> renommé en <code>.zip</code> (indiqué dans le formulaire).</p>
+      </div>
+      <div class="step">
+        <div class="num">3</div>
+        <h3>Valide — c'est tout</h3>
+        <p>Une automatisation ajoute ton mod au catalogue toute seule. Tu reçois une confirmation directement sur ta demande.</p>
+      </div>
+    </div>
+
+    <div style="margin-top:26px;">
+      <a class="btn btn-primary" href="https://github.com/Supermarzo/starynth-catalog/issues/new?template=submit-mod.yml">Proposer mon mod maintenant</a>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="mods">
+  <div class="container">
+    <div class="section-head">
+      <div class="kicker">Catalogue</div>
+      <h2>Mods disponibles</h2>
+      <p>Chargé en direct depuis <code>catalog.json</code> — la même liste que dans l'onglet Découvrir de Starynth.</p>
+    </div>
+
+    <div class="mods-toolbar">
+      <input type="text" id="mods-search" placeholder="Rechercher un mod, un auteur, un tag..." />
+      <span id="mods-count" style="color:var(--text-faint); font-size:13px;">Chargement...</span>
+    </div>
+
+    <div class="mods-grid" id="mods-grid">
+      <div class="empty-note">Chargement du catalogue...</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container" style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; width:100%;">
+    <span>Catalogue communautaire, non affilié à l'équipe SMATRS.</span>
+    <span><a href="https://github.com/Supermarzo/starynth-catalog">Voir le dépôt</a> · <a href="https://discord.com/invite/GBXUa7NF2J">Discord</a></span>
+  </div>
+</footer>
+
+<script src="assets/script.js"></script>
+</body>
+</html>
