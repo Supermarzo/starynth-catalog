@@ -3,12 +3,35 @@
 Catalogue officiel des mods disponibles dans **Starynth**, le modloader pour
 *Super Mario And The Rainbow Stars*.
 
-## Comment proposer un mod
+Site public : https://supermarzo.github.io/starynth-catalog/
 
-1. Fork ce dépôt (bouton "Fork" en haut à droite de la page GitHub)
-2. Ajoute une entrée dans `catalog.json` avec les infos de ton mod (voir format ci-dessous)
-3. Publie ton fichier `.rsm` en tant que **Release** sur GitHub (menu "Releases" → "Create a new release" → glisser le `.rsm`) et récupère son URL pour `downloadUrl`
-4. Ouvre une Pull Request vers ce dépôt
+## Comment proposer un mod (méthode simple, recommandée)
+
+Pas besoin de Git, de fork, ni de Pull Request :
+
+1. Ouvre **[ce formulaire](https://github.com/Supermarzo/starynth-catalog/issues/new?template=submit-mod.yml)**
+   (connecte-toi à un compte GitHub gratuit si besoin)
+2. Remplis les champs (nom, auteur, version, description...)
+3. **Renomme ton fichier `.rsm` en `.zip`** (GitHub n'accepte pas l'extension
+   `.rsm` en pièce jointe — c'est le même fichier, juste l'extension qui change
+   temporairement) et glisse-le dans le champ prévu
+4. Valide le formulaire
+
+Une automatisation (GitHub Actions) traite la demande automatiquement : elle
+télécharge ton fichier, l'ajoute au dépôt, met à jour `catalog.json`, et
+commit tout ça — sans validation manuelle. Tu reçois une confirmation
+directement sur ta demande dans les minutes qui suivent. Voir
+`.github/scripts/process-submission.js` pour le détail du traitement.
+
+## Méthode avancée (fork + Pull Request)
+
+Toujours possible si tu préfères éditer `catalog.json` toi-même ou proposer
+plusieurs mods d'un coup :
+
+1. Fork ce dépôt
+2. Ajoute une entrée dans `catalog.json` (voir le format ci-dessous) et publie
+   ton `.rsm` en Release GitHub
+3. Ouvre une Pull Request
 
 ## Format d'une entrée
 
@@ -22,28 +45,23 @@ Catalogue officiel des mods disponibles dans **Starynth**, le modloader pour
   "description": "Description courte du mod.",
   "tags": ["gameplay", "personnages"],
   "iconUrl": "https://.../icon.png",
-  "downloadUrl": "https://github.com/<user>/<repo>/releases/download/v1.0/mon-mod.rsm",
+  "downloadUrl": "https://raw.githubusercontent.com/<user>/<repo>/main/mods/mon-mod.rsm",
   "updatedAt": "2026-07-23"
 }
 ```
 
 - `id` : identifiant unique, sans espace (utilisé pour le nom de fichier local)
 - `gameVersion` : **important**, la version exacte de SMATRS pour laquelle le mod est fait (ex: `"1.1.1"`, `"1.0.2"`...). Starynth s'en sert pour filtrer le catalogue par version et pour proposer de créer automatiquement une instance dans la bonne version si l'utilisateur n'en a pas.
-- `iconUrl` : lien direct vers une image PNG (peut aussi être hébergée dans ce dépôt, ex: `https://raw.githubusercontent.com/<user>/<repo>/main/icons/mon-mod.png`)
-- `downloadUrl` : lien direct vers le fichier `.rsm` (utilise les Releases GitHub, pas le code source du dépôt)
+- `iconUrl` : lien direct vers une image PNG (le dossier `icons/` de ce dépôt, rempli automatiquement par le formulaire)
+- `downloadUrl` : lien direct vers le fichier `.rsm` (dossier `mods/` de ce dépôt, rempli automatiquement par le formulaire)
 
 ## URL du catalogue à utiliser dans Starynth
 
-Une fois ce dépôt en ligne, l'URL à mettre dans Starynth (Paramètres → URL du catalogue) est :
-
 ```
-https://raw.githubusercontent.com/<TON_PSEUDO>/<NOM_DU_DEPOT>/main/catalog.json
+https://raw.githubusercontent.com/Supermarzo/starynth-catalog/main/catalog.json
 ```
 
 ## Versions de SMATRS connues par Starynth
-
-Starynth télécharge automatiquement ces versions (paquet "All") si un mod ou
-une instance en a besoin :
 
 | Version | Date |
 |---|---|
