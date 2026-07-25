@@ -1,1 +1,87 @@
+name: 📦 Proposer un mod
+description: Ajoute ton mod au catalogue Starynth — traité automatiquement, pas besoin de Git.
+title: "[Mod] "
+labels: ["mod-submission"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Merci de proposer ton mod ! Remplis les champs ci-dessous — ton mod
+        sera ajouté au catalogue automatiquement dans les minutes qui suivent,
+        pas besoin d'attendre une validation manuelle.
 
+        ⚠️ **Avant de glisser ton fichier `.rsm` plus bas, renomme-le
+        temporairement en `.zip`** (ex: `mon-mod.rsm` → `mon-mod.zip`).
+        GitHub n'accepte pas l'extension `.rsm` en pièce jointe, mais c'est
+        littéralement le même fichier — Starynth remet automatiquement la
+        bonne extension après.
+
+  - type: input
+    id: mod_name
+    attributes:
+      label: Nom du mod
+      placeholder: "Super Luigi Mod"
+    validations:
+      required: true
+
+  - type: input
+    id: mod_author
+    attributes:
+      label: Auteur (ton pseudo)
+      placeholder: "TonPseudo"
+    validations:
+      required: true
+
+  - type: input
+    id: mod_version
+    attributes:
+      label: Version du mod
+      placeholder: "1.0"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: game_version
+    attributes:
+      label: Version de SMATRS ciblée
+      description: La version du jeu pour laquelle ton mod est fait.
+      options:
+        - "1.1.1"
+        - "1.1.0"
+        - "1.0.2"
+        - "1.0.1"
+        - "1.0.0"
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      placeholder: "Décris ton mod en quelques phrases..."
+    validations:
+      required: true
+
+  - type: input
+    id: tags
+    attributes:
+      label: Tags (séparés par des virgules, optionnel)
+      placeholder: "gameplay, personnages, niveaux"
+    validations:
+      required: false
+
+  - type: textarea
+    id: rsm_file
+    attributes:
+      label: Fichier du mod
+      description: Glisse ici ton fichier renommé en .zip (voir l'avertissement plus haut).
+    validations:
+      required: true
+
+  - type: textarea
+    id: icon_file
+    attributes:
+      label: Icône (PNG, optionnel)
+      description: Glisse ici une image PNG à afficher dans Starynth. Sans icône, le mod s'affiche sans image.
+    validations:
+      required: false
