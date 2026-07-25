@@ -159,9 +159,14 @@ async function main() {
 
   fs.writeFileSync(catalogPath, JSON.stringify(catalog, null, 2) + '\n', 'utf8');
 
+  // On n'ajoute à git QUE les chemins qui existent réellement (ex: pas de
+  // dossier icons/ si aucune icône n'a été jointe), sinon `git add` échoue
+  // entièrement dès qu'un seul chemin est introuvable.
+  const pathsToAdd = [rsmPath, iconPath, catalogPath].filter(p => p && fs.existsSync(p));
+
   execSync('git config user.name "starynth-bot"');
   execSync('git config user.email "actions@github.com"');
-  execSync('git add mods icons catalog.json');
+  execSync(`git add ${pathsToAdd.map(p => `"${p}"`).join(' ')}`);
   execSync(`git commit -m "Ajout du mod: ${name} (via issue #${ISSUE_NUMBER})"`);
   execSync('git push');
 
