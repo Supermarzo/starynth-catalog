@@ -6,25 +6,10 @@
     "version": "1.0",
     "gameVersion": "1.1.1",
     "description": "Ceci est un mod d'exemple. Remplace cette entrée par de vrais mods une fois que tu as des .rsm à publier en Release.",
-    "tags": [
-      "exemple"
-    ],
+    "tags": ["exemple"],
+    "dependencies": [],
     "iconUrl": "",
     "downloadUrl": "",
     "updatedAt": "2026-07-23"
-  },
-  {
-    "id": "25-greener",
-    "name": "25% Greener",
-    "author": "Supermarzo",
-    "version": "1.0",
-    "gameVersion": "1.1.1",
-    "description": "Makes the game 25% Greener (yes)",
-    "tags": [
-      "shitpost"
-    ],
-    "iconUrl": "",
-    "downloadUrl": "https://raw.githubusercontent.com/Supermarzo/starynth-catalog/main/mods/25-greener.rsm",
-    "updatedAt": "2026-07-25"
   }
 ]
