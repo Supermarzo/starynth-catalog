@@ -70,6 +70,14 @@ body:
     validations:
       required: false
 
+  - type: input
+    id: dependencies
+    attributes:
+      label: Dépendances (identifiants d'autres mods du catalogue, séparés par des virgules, optionnel)
+      placeholder: "super-lib, autre-mod-requis"
+    validations:
+      required: false
+
   - type: textarea
     id: rsm_file
     attributes:
