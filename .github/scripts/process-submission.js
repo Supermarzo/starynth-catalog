@@ -100,6 +100,8 @@ async function main() {
   const description = fields['Description'];
   const tags = (fields['Tags (séparés par des virgules, optionnel)'] || '')
     .split(',').map(t => t.trim()).filter(Boolean);
+  const dependencies = (fields["Dépendances (identifiants d'autres mods du catalogue, séparés par des virgules, optionnel)"] || '')
+    .split(',').map(t => t.trim()).filter(Boolean);
   const rsmField = fields['Fichier du mod'];
   const iconField = fields['Icône (PNG, optionnel)'];
 
@@ -148,6 +150,7 @@ async function main() {
     gameVersion,
     description,
     tags,
+    dependencies,
     iconUrl: iconPath ? `https://raw.githubusercontent.com/${REPO}/main/${iconPath}` : '',
     downloadUrl: `https://raw.githubusercontent.com/${REPO}/main/${rsmPath}`,
     updatedAt: new Date().toISOString().slice(0, 10)
