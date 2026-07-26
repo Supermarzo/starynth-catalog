@@ -30,5 +30,21 @@
     "iconUrl": "",
     "downloadUrl": "https://raw.githubusercontent.com/Supermarzo/starynth-catalog/main/mods/25-greener.rsm",
     "updatedAt": "2026-07-26"
+  },
+  {
+    "id": "chased",
+    "name": "CHASED",
+    "author": "Supermarzo",
+    "version": "1.0",
+    "gameVersion": "1.1.1",
+    "description": "SMATRS but a clone is chasing you",
+    "tags": [
+      "Gameplay",
+      "challenge"
+    ],
+    "dependencies": [],
+    "iconUrl": "",
+    "downloadUrl": "https://raw.githubusercontent.com/Supermarzo/starynth-catalog/main/mods/chased.rsm",
+    "updatedAt": "2026-07-26"
   }
 ]
